@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import pygame
 import sys 
 from player import Player 
@@ -96,7 +97,6 @@ def handleClick(pos):
 		switchCurPlayer()
 
 	curr_player.addBox(x, y) 
-	print(state)
 	curr_player.printInfo()
 
 def getBoxIndex(pos):

@@ -62,18 +62,14 @@ class Player:
 		self.stretches = updatedStretches
 		
 		self.mergeConnectedStretches()
-		print("Before ", self.stretches)
 		self.stretches = self.dedupe(self.stretches)
-		print("After ", self.stretches)
 		self.updatePoints()
 
-		print(self.stretches)
 
 	def mergeConnectedStretches(self):
 		mergedStretches = list()
 		itemsToRemove = list()
 
-		#print("Stretches: ", self.stretches)
 		for i in range(len(self.stretches) - 1):
 			for j in range(i, len(self.stretches)):
 				if i == j:
@@ -93,7 +89,6 @@ class Player:
 					if not flag:
 						continue 	
 
-					#print(" valid stretch ", res)
 			
 					mergedStretches.append(res)
 					
@@ -142,7 +137,7 @@ class Player:
 			self.points += (len(stretch) - 2) * 2 - 1
 
 	def printInfo(self):
-		print("Points: ", self.points)
+		print("Points for %s: " % (self.symbol), self.points)
 
 
 	def fitIfPossible(self, pos, stretch):
